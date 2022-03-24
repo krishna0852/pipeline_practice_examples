@@ -1,0 +1,17 @@
+pipeline{
+    agent any
+    stages{
+        stage("scm"){
+            steps{
+                git 'https://github.com/krishna0852/game-of-life-1.git'
+            }
+        }
+        stage("build"){
+            steps{
+                bat 'mvn package'
+            }
+            
+        }
+        
+    }
+}
